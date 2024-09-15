@@ -1,0 +1,710 @@
+<MyScreenManager>:
+    MainMenu:
+        id: main_menu
+    PlaylistMenu:
+        id: playlist_menu
+    LightsMenu:
+        id: lights_menu
+    EyesMenu:
+        id: eyes_menu
+    HiFiRushPlaylist:
+        id: hifi_rush_playlist
+    PsychPlaylist:
+        id: psych_playlist
+    MemePlaylist:
+        id: meme_playlist
+
+
+<MainMenu>:
+    name: '_main_menu_'
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'top'
+
+        Button:
+            text: 'Music-Sounds'
+            color: [0,0,0]
+            bold: False
+            font_size: self.width / 10
+            font_name: 'AVENGEANCE MIGHTIEST AVENGER'
+
+            size_hint: 0.5,1/3
+
+            background_normal: ''
+            background_color: [255/255,75/255,80/255,1]
+
+            on_press: root.manager.current = '_playlist_menu_'
+
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'center'
+
+        Button:
+            text: 'Light Effects'
+            color: [0,0,0]
+            bold: False
+            font_size: self.width / 10
+            font_name: 'AVENGEANCE MIGHTIEST AVENGER'
+
+            size_hint: 0.5,1/3
+
+            background_normal: ''
+            background_color: [255/255,255/255,129/255,1]
+
+            on_press: root.manager.current = '_lights_menu_'
+
+    AnchorLayout:
+        anchor_x: 'left'
+        anchor_y: 'bottom'
+
+        Button:
+            text: 'Eye Effects'
+            color: [0,0,0]
+            bold: False
+            font_size: self.width / 10
+            font_name: 'AVENGEANCE MIGHTIEST AVENGER'
+
+            anchor_x: 'left'
+            anchor_y: 'bottom'
+            size_hint: 0.5,1/3
+
+            background_normal: ''
+            background_color: [94/255,174/255,201/255,1]
+
+            on_press: root.manager.current = '_eyes_menu_'
+
+    AnchorLayout:
+        anchor_x: 'right'
+        anchor_y: 'bottom'
+
+        ToggleButton:
+            text: 'Connect'
+            color: [0,0,0]
+            bold: False
+            font_size: self.width / 10
+            font_name: 'AVENGEANCE MIGHTIEST AVENGER'
+
+            size_hint: 0.5,1/3
+
+            background_normal: ''
+            background_color: [255/255,75/255,80/255,1]
+
+            on_press: root.toggle_connect()
+
+<PlaylistMenu>:
+    name: '_playlist_menu_'
+    ScrollView:
+        scroll_type:['bars', 'content']
+        size_hint: (1,1)
+        pos_hint: {"x":0, "top":1}
+        do_scroll_x: False
+        do_scroll_y: True
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint: (1, .9)
+            height: self.minimum_height
+            Button:
+                text: 'Hi-Fi Rush Soundtrack'
+                on_press: root.manager.current = '_hifi_rush_playlist_'
+            Button:
+                text: 'Psych The Musical'
+                on_press: root.manager.current = '_psych_playlist_'
+            Button:
+                text: 'Meme Songs'
+                on_press: root.manager.current = '_meme_playlist_'
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: .1
+        #height: self.minimum_height
+        Button:
+            text: 'Back'
+            on_press: root.manager.current = '_main_menu_'
+        Button:
+            text: 'Previous Song'
+            on_press: root.write(2)
+        Button:
+            text: 'Pause'
+            on_press: root.write(3)
+        Button:
+            text: 'Next Song'
+            on_press: root.write(4)
+
+<HiFiRushPlaylist>:
+    name: '_hifi_rush_playlist_'
+    ScrollView:
+        scroll_type:['bars', 'content']
+        size_hint: (1,.9)
+        pos_hint: {"x":0, "top":1}
+        do_scroll_x: False
+        do_scroll_y: True
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: self.minimum_height
+            size_hint_x: 1
+            AudioList:
+                label_text: 'The Beacon'
+                folder_index: 2
+                file_index: 1
+            AudioList:
+                label_text: "The Pulse"
+                folder_index: 2
+                file_index: 2
+            AudioList:
+                label_text: "The Rush"
+                folder_index: 2
+                file_index: 3
+            AudioList:
+                label_text: 'I Got This'
+                folder_index: 2
+                file_index: 4
+            AudioList:
+                label_text: "Welcome to Qa"
+                folder_index: 2
+                file_index: 5
+            AudioList:
+                label_text: 'Too Big To Fail'
+                folder_index: 2
+                file_index: 6
+            AudioList:
+                label_text: 'So This Is Where The Magic Happens'
+                folder_index: 2
+                file_index: 7
+            AudioList:
+                label_text: "The Hideout"
+                folder_index: 2
+                file_index: 8
+            AudioList:
+                label_text: 'Mission Report!'
+                folder_index: 2
+                file_index: 9
+            AudioList:
+                label_text: "Production Destruction"
+                folder_index: 2
+                file_index: 10
+            AudioList:
+                label_text: "Derailed"
+                folder_index: 2
+                file_index: 11
+            AudioList:
+                label_text: 'Some People Call This Teamwork'
+                folder_index: 2
+                file_index: 12
+            AudioList:
+                label_text: 'Captive Normals (A Fever Dream)'
+                folder_index: 2
+                file_index: 13
+            AudioList:
+                label_text: "You Said Make It Stop"
+                folder_index: 2
+                file_index: 14
+            AudioList:
+                label_text: "Check This Out"
+                folder_index: 2
+                file_index: 15
+            AudioList:
+                label_text: 'The Hideout (808 Mix)'
+                folder_index: 2
+                file_index: 16
+            AudioList:
+                label_text: "Heatwave"
+                folder_index: 2
+                file_index: 17
+            AudioList:
+                label_text: "Test Chamber"
+                folder_index: 2
+                file_index: 18
+            AudioList:
+                label_text: "That's Mister Chai To You!"
+                folder_index: 2
+                file_index: 19
+            AudioList:
+                label_text: "Previously On..."
+                folder_index: 2
+                file_index: 20
+            AudioList:
+                label_text: 'New Teammates'
+                folder_index: 2
+                file_index: 21
+            AudioList:
+                label_text: "Vibin'"
+                folder_index: 2
+                file_index: 22
+            AudioList:
+                label_text: 'Dev Engine'
+                folder_index: 2
+                file_index: 23
+            AudioList:
+                label_text: "Heatwave (Värrt Mix)"
+                folder_index: 2
+                file_index: 24
+            AudioList:
+                label_text: 'Unrestricted Creative Freedom'
+                folder_index: 2
+                file_index: 25
+            AudioList:
+                label_text: "Surrounded"
+                folder_index: 2
+                file_index: 26
+            AudioList:
+                label_text: "Buzzsaw"
+                folder_index: 2
+                file_index: 27
+            AudioList:
+                label_text: "You Don't Have What It Takes, Kid"
+                folder_index: 2
+                file_index: 28
+            AudioList:
+                label_text: 'Downtime'
+                folder_index: 2
+                file_index: 29
+            AudioList:
+                label_text: "Snap (Out Of It)"
+                folder_index: 2
+                file_index: 30
+            AudioList:
+                label_text: 'Reciprocity'
+                folder_index: 2
+                file_index: 31
+            AudioList:
+                label_text: "Security Shutdown"
+                folder_index: 2
+                file_index: 32
+            AudioList:
+                label_text: "Can't Stop Us Now"
+                folder_index: 2
+                file_index: 33
+            AudioList:
+                label_text: "This'll Be Rough"
+                folder_index: 2
+                file_index: 34
+            AudioList:
+                label_text: "Negotiation"
+                folder_index: 2
+                file_index: 35
+            AudioList:
+                label_text: 'Escape Plan!!'
+                folder_index: 2
+                file_index: 36
+            AudioList:
+                label_text: "Chasedown"
+                folder_index: 2
+                file_index: 37
+            AudioList:
+                label_text: 'A New Fight'
+                folder_index: 2
+                file_index: 38
+            AudioList:
+                label_text: 'Mission Report! (Korsica Mix)'
+                folder_index: 2
+                file_index: 39
+            AudioList:
+                label_text: 'Through the Halls of History'
+                folder_index: 2
+                file_index: 40
+            AudioList:
+                label_text: "How Far We've Come"
+                folder_index: 2
+                file_index: 41
+            AudioList:
+                label_text: 'Backstage Hustle'
+                folder_index: 2
+                file_index: 42
+            AudioList:
+                label_text: "My Heart Feels No Pain"
+                folder_index: 2
+                file_index: 43
+            AudioList:
+                label_text: "Shut Down The Campus"
+                folder_index: 2
+                file_index: 44
+            AudioList:
+                label_text: "What's the Next Move?"
+                folder_index: 2
+                file_index: 45
+            AudioList:
+                label_text: 'Exposition'
+                folder_index: 2
+                file_index: 46
+            AudioList:
+                label_text: "Let's Hope This Works"
+                folder_index: 2
+                file_index: 47
+            AudioList:
+                label_text: "Hey Gang, What's That?"
+                folder_index: 2
+                file_index: 48
+            AudioList:
+                label_text: "Intruder"
+                folder_index: 2
+                file_index: 49
+            AudioList:
+                label_text: 'The Fizzith'
+                folder_index: 2
+                file_index: 50
+            AudioList:
+                label_text: 'Confrontation'
+                folder_index: 2
+                file_index: 51
+            AudioList:
+                label_text: 'Reflection'
+                folder_index: 2
+                file_index: 52
+            AudioList:
+                label_text: "Surfacing"
+                folder_index: 2
+                file_index: 53
+            AudioList:
+                label_text: 'That Was Very Dope, Cnmn'
+                folder_index: 2
+                file_index: 54
+            AudioList:
+                label_text: "You Can't Take on All of Us"
+                folder_index: 2
+                file_index: 55
+            AudioList:
+                label_text: 'In A Blink'
+                folder_index: 2
+                file_index: 56
+            AudioList:
+                label_text: "It Was All For This"
+                folder_index: 2
+                file_index: 57
+            AudioList:
+                label_text: "What the Future Holds"
+                folder_index: 2
+                file_index: 58
+            AudioList:
+                label_text: 'Kicking Back'
+                folder_index: 2
+                file_index: 59
+            AudioList:
+                label_text: 'Climb the Tower'
+                folder_index: 2
+                file_index: 60
+            AudioList:
+                label_text: "Boss (Vandelay Theme)"
+                folder_index: 2
+                file_index: 61
+            AudioList:
+                label_text: 'Challenger!'
+                folder_index: 2
+                file_index: 62
+            AudioList:
+                label_text: "Give It All You Got"
+                folder_index: 2
+                file_index: 63
+            AudioList:
+                label_text: "I Handled It Again"
+                folder_index: 2
+                file_index: 64
+            AudioList:
+                label_text: 'Synesthesia'
+                folder_index: 2
+                file_index: 65
+            AudioList:
+                label_text: "Secret Song (Making Things Is Hard)"
+                folder_index: 2
+                file_index: 66
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: .1
+        #height: self.minimum_height
+        Button:
+            text: 'Back'
+            on_press: root.manager.current = '_playlist_menu_'
+        Button:
+            text: 'Previous Song'
+            on_press: root.write(2)
+        Button:
+            text: 'Pause'
+            on_press: root.write(3)
+        Button:
+            text: 'Next Song'
+            on_press: root.write(4)
+
+
+<PsychPlaylist>:
+    name: '_psych_playlist_'
+    ScrollView:
+        scroll_type:['bars', 'content']
+        size_hint: (1,.9)
+        pos_hint: {"x":0, "top":1}
+        do_scroll_x: False
+        do_scroll_y: True
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: self.minimum_height
+            size_hint_x: 1
+            AudioList:
+                label_text: 'Santa Barbara Skies'
+                folder_index: 3
+                file_index: 1
+            AudioList:
+                label_text: "Z's Lament"
+                folder_index: 3
+                file_index: 2
+            AudioList:
+                label_text: "I've Heard It Both Ways"
+                folder_index: 3
+                file_index: 3
+            AudioList:
+                label_text: 'Sleigh Bells And Songs'
+                folder_index: 3
+                file_index: 4
+            AudioList:
+                label_text: "(When You're) Making Up A Song"
+                folder_index: 3
+                file_index: 5
+            AudioList:
+                label_text: 'Often Its The Opposite'
+                folder_index: 3
+                file_index: 6
+            AudioList:
+                label_text: 'Into the Woods / I Hurt No One'
+                folder_index: 3
+                file_index: 7
+            AudioList:
+                label_text: 'Act II Storybook Open'
+                folder_index: 3
+                file_index: 8
+            AudioList:
+                label_text: "I've Heard It Both Ways (reprise one)"
+                folder_index: 3
+                file_index: 9
+            AudioList:
+                label_text: 'Under Santa Barbara Skies (reprise)'
+                folder_index: 3
+                file_index: 10
+            AudioList:
+                label_text: "I've Heard It Both Ways (reprise two)"
+                folder_index: 3
+                file_index: 11
+            AudioList:
+                label_text: "It's Her"
+                folder_index: 3
+                file_index: 12
+            AudioList:
+                label_text: 'Promised Land'
+                folder_index: 3
+                file_index: 13
+            AudioList:
+                label_text: 'Shawn Hears the Theme / The Breakdown'
+                folder_index: 3
+                file_index: 14
+            AudioList:
+                label_text: "Gus in the Spotlight"
+                folder_index: 3
+                file_index: 15
+            AudioList:
+                label_text: 'The Surrender'
+                folder_index: 3
+                file_index: 16
+            AudioList:
+                label_text: "Jamaican Inspector"
+                folder_index: 3
+                file_index: 17
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: .1
+        #height: self.minimum_height
+        Button:
+            text: 'Back'
+            on_press: root.manager.current = '_playlist_menu_'
+        Button:
+            text: 'Previous Song'
+            on_press: root.write(2)
+        Button:
+            text: 'Pause'
+            on_press: root.write(3)
+        Button:
+            text: 'Next Song'
+            on_press: root.write(4)
+
+<MemePlaylist>:
+    name: '_meme_playlist_'
+    ScrollView:
+        scroll_type:['bars', 'content']
+        size_hint: (1,.9)
+        pos_hint: {"x":0, "top":1}
+        do_scroll_x: False
+        do_scroll_y: True
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: self.minimum_height
+            size_hint_x: 1
+            AudioList:
+                label_text: 'Catboys'
+                folder_index: 4
+                file_index: 1
+            AudioList:
+                label_text: "Where's My Juul?? (feat. Lil Mariko)"
+                folder_index: 4
+                file_index: 2
+            AudioList:
+                label_text: 'L.E.E.C.H.E.S'
+                folder_index: 4
+                file_index: 3
+            AudioList:
+                label_text: 'Ievan Polkka - Remastered 2024'
+                folder_index: 4
+                file_index: 4
+            AudioList:
+                label_text: 'Caramelldansen'
+                folder_index: 4
+                file_index: 5
+            AudioList:
+                label_text: 'Sandstorm'
+                folder_index: 4
+                file_index: 6
+            AudioList:
+                label_text: 'Ram Ranch'
+                folder_index: 4
+                file_index: 7
+            AudioList:
+                label_text: 'Cpr'
+                folder_index: 4
+                file_index: 8
+            AudioList:
+                label_text: 'WAP (feat. Megan Thee Stallion)'
+                folder_index: 4
+                file_index: 9
+            AudioList:
+                label_text: 'Careless Whisper'
+                folder_index: 4
+                file_index: 10
+            AudioList:
+                label_text: 'Deja Vu (Initial D)'
+                folder_index: 4
+                file_index: 11
+            AudioList:
+                label_text: 'Two Trucks'
+                folder_index: 4
+                file_index: 12
+            AudioList:
+                label_text: 'Once in a Lifetime - 2005 Remaster'
+                folder_index: 4
+                file_index: 13
+            AudioList:
+                label_text: 'Take Me Home, Country Roads - Original Version'
+                folder_index: 4
+                file_index: 14
+            AudioList:
+                label_text: "Tip Toe Thru' the Tulips with Me"
+                folder_index: 4
+                file_index: 15
+            AudioList:
+                label_text: 'Rasputin'
+                folder_index: 4
+                file_index: 16
+            AudioList:
+                label_text: 'DONTTRUSTME'
+                folder_index: 4
+                file_index: 17
+            AudioList:
+                label_text: 'All Star'
+                folder_index: 4
+                file_index: 18
+            AudioList:
+                label_text: "Hips Don't Lie (feat. Wyclef Jean)"
+                folder_index: 4
+                file_index: 19
+            AudioList:
+                label_text: 'Combination Pizza Hut and Taco Bell'
+                folder_index: 4
+                file_index: 20
+            AudioList:
+                label_text: "Ev'rybody Wants to Be a Cat"
+                folder_index: 4
+                file_index: 21
+            AudioList:
+                label_text: "Scales and Arpeggios"
+                folder_index: 4
+                file_index: 22
+            AudioList:
+                label_text: "Thomas O'Malley Cat"
+                folder_index: 4
+                file_index: 23
+            AudioList:
+                label_text: "Bad Apple"
+                folder_index: 4
+                file_index: 24
+            AudioList:
+                label_text: "All I Want For Christmas Is You"
+                folder_index: 4
+                file_index: 25
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint_y: .1
+        #height: self.minimum_height
+        Button:
+            text: 'Back'
+            on_press: root.manager.current = '_playlist_menu_'
+        Button:
+            text: 'Previous Song'
+            on_press: root.write(2)
+        Button:
+            text: 'Pause'
+            on_press: root.write(3)
+        Button:
+            text: 'Next Song'
+            on_press: root.write(4)
+
+
+<AudioList>:
+    pos_hint: {"x":0, "top":.1}
+    size_hint_y: None
+    height: 48
+    Label:
+        text: root.label_text
+    Button:
+        text: root.button_text
+        on_press: root.write(root.folder_index, root.file_index)
+        #on_press: print(root.file_index)
+
+<LightsMenu>:
+    name: '_lights_menu_'
+    BoxLayout:
+        orientation: 'vertical'
+
+		Button:
+			text: "Main Color"
+			color: [0,0,0]
+            bold: False
+            font_size: self.width / 10
+            font_name: 'AVENGEANCE MIGHTIEST AVENGER'
+
+            size_hint: (0.5,0.5)
+            pos_hint: {'left':1}
+
+            background_normal: ''
+            background_color: [75/255,89/255,110/255,1]
+			on_press: root.manager.current = '_main_menu_'
+
+		Button:
+			text: "Effects"
+			color: [0,0,0]
+            bold: False
+            font_size: self.width / 10
+            font_name: 'AVENGEANCE MIGHTIEST AVENGER'
+
+            size_hint: (0.5,0.5)
+            pos_hint: {'left':1}
+
+            background_normal: ''
+            background_color: [7/255,255/255,255/255,1]
+			on_press: root.manager.current = '_main_menu_'
+
+<EyesMenu>:
+    name: '_eyes_menu_'
+    BoxLayout:
+		Button:
+			text: "Eyes Menu WIP"
+			background_color: [255/255,255/255,129/255,1]
+			on_press: root.manager.current = '_main_menu_'
+			#
